@@ -1,14 +1,15 @@
-%define		_rel 0.1
 Summary:	The JavaScript Minifier
 Summary(pl.UTF-8):	Zmniejszacz JavaScriptu
 Name:		jsmin
-Version:	0
-Release:	0.20070522.%{_rel}
+Version:	20080803
+Release:	1
 License:	Freeware
 Group:		Development/Tools
 Source0:	http://www.crockford.com/javascript/%{name}.c
 # Source0-md5:	e764a543ec870d1ede2478236ecd7e98
 URL:		http://javascript.crockford.com/jsmin.html
+BuildRequires:	rpmbuild(macros) >= 1.553
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +29,13 @@ samodokumentującego się kodu.
 %prep
 %setup -qcT
 cp -a %{SOURCE0} .
+%undos *.c
+
+version=$(sed -n 2p jsmin.c | xargs)
+if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
+	: %%{version} mismatch
+	exit 1
+fi
 
 %build
 %{__cc} %{rpmcflags} jsmin.c -o jsmin
