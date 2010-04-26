@@ -6,7 +6,7 @@ Release:	1
 License:	Freeware
 Group:		Development/Tools
 Source0:	http://www.crockford.com/javascript/%{name}.c
-# Source0-md5:	e764a543ec870d1ede2478236ecd7e98
+# Source0-md5:	8847fd99576468d6c9e76420da0b6b55
 URL:		http://javascript.crockford.com/jsmin.html
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
