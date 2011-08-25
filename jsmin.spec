@@ -1,12 +1,12 @@
 Summary:	The JavaScript Minifier
 Summary(pl.UTF-8):	Zmniejszacz JavaScriptu
 Name:		jsmin
-Version:	20080803
-Release:	2
+Version:	20110122
+Release:	1
 License:	Freeware
 Group:		Development/Tools
 Source0:	http://www.crockford.com/javascript/%{name}.c
-# Source0-md5:	8847fd99576468d6c9e76420da0b6b55
+# Source0-md5:	1bd671048da331b899902379411b72df
 URL:		http://javascript.crockford.com/jsmin.html
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
@@ -38,7 +38,7 @@ if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
 fi
 
 %build
-%{__cc} %{rpmcflags} jsmin.c -o jsmin
+%{__cc} %{rpmcflags} %{rpmcppflags} %{rpmldflags} jsmin.c -o jsmin
 
 %install
 rm -rf $RPM_BUILD_ROOT
