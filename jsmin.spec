@@ -1,12 +1,12 @@
 Summary:	The JavaScript Minifier
 Summary(pl.UTF-8):	Zmniejszacz JavaScriptu
 Name:		jsmin
-Version:	20110122
+Version:	20130329
 Release:	1
 License:	Freeware
 Group:		Development/Tools
-Source0:	http://www.crockford.com/javascript/%{name}.c
-# Source0-md5:	1bd671048da331b899902379411b72df
+Source0:	https://raw.githubusercontent.com/douglascrockford/JSMin/master/%{name}.c
+# Source0-md5:	be504bac1f2c2c7d1b09eafae3534140
 URL:		http://javascript.crockford.com/jsmin.html
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
